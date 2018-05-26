@@ -1,0 +1,124 @@
+<!--
+<p>
+  users works!
+</p>
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=".../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form (submit) = "loginUser()" class="form-signin">
+      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="userName" class="sr-only">Email address</label>
+      <!--<input type="email" id="inputEmail" [(ngModel)] = "userName" name = "userName" class="form-control" placeholder="Email address" required autofocus>-->
+      <input type="email" id="userName" [(ngModel)] = "userName" name = "userName" class="form-control" required autofocus>
+      <label for="pwd" class="sr-only">Password</label>
+      <!--<input type="password" id="inputPassword" [(ngModel)] = "pwd" name = "pwd" class="form-control" placeholder="Password" required>-->
+      <input type="password" id="pwd" [(ngModel)] = "pwd" name = "pwd" class="form-control" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+      <input type = "submit" class = "btn btn btn-success" value = "submit">
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <br><br>
+      <div class = "container">
+        <div class="row">
+          <table class="table">
+            <thead class="thead-inverse">
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Surname</th>
+                <th class="text-center">Username</th>
+            </tr>
+            </thead>
+            <tbody>
+          <!--
+            <tr *ngIf = "user"> 
+                <td class="text-center" style="width: 15px;">{{user.first_name}}</td>
+                <td class="text-center" style="width: 15px;">{{user.last_name}}</td>
+                <td class="text-center" style="width: 200px;">{{user.userName}}</td>
+                <br><br>
+            </tr>
+          -->
+          <div *ngIf = "user"> 
+              <div ng-view>  
+                <app-hr></app-hr>
+              </div>
+          </div>  
+          
+          <!--
+          <div *ngIf = "user as null; then thenBlocks else validUser"></div>
+          <ng-template #thenBlocks>
+              <tr>
+                  Hiiiiii  
+                <br><br>
+              </tr>  
+            </ng-template>  
+            <ng-template #validUser>
+            <div *ngIf = "user; then thenBlock"></div> 
+            <ng-template #thenBlock>
+                <tr>
+                    <td class="text-center" style="width: 15px;">{{user.first_name}}</td>
+                    <td class="text-center" style="width: 15px;">{{user.last_name}}</td>
+                    <td class="text-center" style="width: 200px;">{{user.userName}}</td>
+                    <br><br>
+                </tr>  
+              </ng-template>
+            </ng-template>
+          -->
+          
+          
+          
+          
+        
+          
+            </tbody>
+        </table>
+        </div>  
+      </div>
+      <!--<ng-template #invalidUser>Invalid Username & Password</ng-template>-->
+    </form>
+    <!--
+    <div class = "container">
+      <div class="row">
+        <table class="table">
+          <thead class="thead-inverse">
+          <tr>
+              <th class="text-center">Name</th>
+              <th class="text-center">Surname</th>
+              <th class="text-center">Username</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor = "let user of users">
+              <td class="text-center" style="width: 15px;">{{user.first_name}}</td>
+              <td class="text-center" style="width: 15px;">{{user.last_name}}</td>
+              <td class="text-center" style="width: 200px;">{{user.userName}}</td>
+              <br><br>
+          </tr>
+          </tbody>
+      </table>
+      </div>  
+    </div>
+    -->
+  </body>
+</html>
